@@ -1,0 +1,51 @@
+package Solutions;
+
+import java.util.Scanner;
+
+public class question1 {
+    public static void moveZeros(int[] nums) {
+        int index = 0;
+
+        // Move all non-zero elements to the front of the array
+        for (int num : nums) {
+            if (num != 0) {
+                nums[index] = num;
+                index++;
+            }
+        }
+
+        // Fill the remaining positions with zeros
+        while (index < nums.length) {
+            nums[index] = 0;
+            index++;
+        }
+    }
+
+    public static void main(String[] args) {
+        
+
+        Scanner sc=new Scanner(System.in);
+    	int n=0;
+    	System.out.println("Enter first array size");
+    	n=sc.nextInt();
+    	int[] nums = new int[n];
+	      System.out.println("Enter first array values");
+	      for(int i=0;i<n;i++) {
+	    	  nums[i]=sc.nextInt();
+	      }
+        
+        
+        System.out.println("Original Array: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+
+        moveZeros(nums);
+
+        System.out.println("\nArray after moving zeros to the end: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+        sc.close();
+    }
+}
