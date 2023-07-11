@@ -1,3 +1,5 @@
+Q1)
+
 import java.util.Scanner;
 
 public class CheckPositiveNegativeZero {
@@ -16,4 +18,127 @@ public class CheckPositiveNegativeZero {
         }
     }
 }
+
+Q2) Write a Java program to print the Fibonacci series up to a given number using a for loop
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int a = 0;
+        int b = 1;
+        System.out.print("The Fibonacci series up to " + n + " is: ");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}
+
+Q3)Write a Java program to calculate the average of a list of numbers using a do-while loop.
+
+import java.util.Scanner;
+
+public class CalculateAverage {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of numbers: ");
+        int n = sc.nextInt();
+
+        int sum = 0;
+        int count = 0;
+
+        do {
+            System.out.print("Enter a number: ");
+            int number = sc.nextInt();
+
+            sum += number;
+            count++;
+        } while (count < n);
+
+        double average = sum / n;
+        System.out.println("The average is " + average);
+    }
+}
+
+Q4)Write a Java program to find the 10 points largest of three numbers using nested if-else statements.
+import java.util.Scanner;
+
+public class Find10PointsLargestOfThreeNumbers {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter three numbers: ");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int num3 = sc.nextInt();
+
+        int largestOfThree = 0;
+
+        if (num1 > num2 && num1 > num3) {
+            largestOfThree = num1;
+        } else if (num2 > num1 && num2 > num3) {
+            largestOfThree = num2;
+        } else {
+            largestOfThree = num3;
+        }
+
+        // Find the 10 points largest number
+        if (largestOfThree == num1) {
+            largestOfThree = findLargestOfThree(num2, num3, num1);
+        } else if (largestOfThree == num2) {
+            largestOfThree = findLargestOfThree(num1, num3, num2);
+        } else {
+            largestOfThree = findLargestOfThree(num1, num2, num3);
+        }
+
+        System.out.println("The 10 points largest number is: " + largestOfThree);
+    }
+
+    private static int findLargestOfThree(int num1, int num2, int num3) {
+        int largest = 0;
+
+        if (num1 > num2) {
+            largest = num1;
+        } else {
+            largest = num2;
+        }
+
+        if (largest < num3) {
+            largest = num3;
+        }
+
+        return largest;
+    }
+}
+
+Q5)Write a Java program to declare 9 points and initialize variables of different data types (int, double, String) with appropriate identifiers.
+public class DeclareAndInitializeVariables {
+
+    public static void main(String[] args) {
+        // Declare and initialize variables of different data types
+        int integerVariable = 10;
+        double doubleVariable = 10.5;
+        String stringVariable = "Hello, world!";
+
+        // Print the values of the variables
+        System.out.println("The value of the integer variable is: " + integerVariable);
+        System.out.println("The value of the double variable is: " + doubleVariable);
+        System.out.println("The value of the string variable is: " + stringVariable);
+    }
+}
+
+
+
+
+
 
